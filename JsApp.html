@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CABRIANA, RAYMARK A. JS APPLICATION</title>
+</head>
+<body>
+  <label>ENTER</label>
+  <input type="text" id="value1">
+  <input type="button" value="OK" onclick="mode()">
+  <h3 id="result"></h3>
+  <script type="text/javascript">
+    function mode()
+    {
+      var x = Number(document.getElementById("value1").value);
+      if (isNaN(x))
+      {
+        alert("Invalid!")
+      }
+      else
+      {
+        if (x %100 == 0)
+        {
+          alert("Number is accepted")
+        }
+        else
+        {
+          alert("Number is not accepted")
+        }
+      }
+    }
+
+      </script>
+    </body>
+    </html>
