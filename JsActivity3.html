@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JAVASCRIPT Act#3--[Cabriana, Raymark A.]</title>
+</head>
+<body style="padding-top:150px;">
+	<center>
+		<label>Enter Grade:</label>
+		<input type="text" id="grade" name="">
+		<input type="button" value="SUBMIT" name="" onclick="result()">
+		<h1>Remark: </h1><h1 id="grades"></h1>
+	</center>
+	<script type="text/javascript">
+		function result()
+		{
+			var grd = Number(document.getElementById("grade").value);
+			var bracket = "";
+
+			if(isNaN(grd)==false)
+			{
+				if(grd>94)
+				{
+					document.getElementById("grades").innerHTML = "Excellence";
+				}
+				else if(grd>84)
+				{
+					document.getElementById("grades").innerHTML = "Very Good";
+				}
+				else if(grd>79)
+				{
+					document.getElementById("grades").innerHTML = "Good";
+				}
+				else if(grd>74)
+				{
+					document.getElementById("grades").innerHTML	= "Nice";
+				}
+				else if(grd>64)
+				{
+					document.getElementById("grades").innerHTML = "Poor";
+				}
+				else{
+					document.getElementById("grades").innerHTML = "Invalid";
+				}
+			}
+		}
+	</script>
+</body>
+</html>
