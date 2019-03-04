@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CABRIANA, RAYMARK A. [Javascript Forms]</title>
+</head>
+<body>
+<label>First Name: </label>
+<input type="text" id="fname"> <br>
+<label>Last Name: </label>
+<input type="text" id="lname"> <br>
+<label>Middle Name: </label>
+<input type="text" id="mname"> <br>
+<label>Strand: </label>
+<select id="strand">
+	<option>ICT</option>
+	<option>HUMSS</option>
+	<option>ABM</option>
+</select> <br>
+<label>Gender: </label>
+<input type="radio" name="gender" value="Male"> Male
+<input type="radio" name="gender" value="Female"> Female <br>
+<label>Status: </label>
+<input type="radio" name="status" value="Single">Single
+<input type="radio" name="status" value="Married">Married
+<input type="radio" name="status" value="Separated">Separated
+<input type="radio" name="status" value="Widowed">Widowed <br>
+<label>Schedule: </label>
+<input type="radio" name="schedule" value="Morning"> Morning
+<input type="radio" name="schedule" value="Afternoon"> Afternoon <br>
+<label>Interested In: </label>
+<input type="checkbox" name="like" value="Computer Programming">Computer Programming
+<input type="checkbox" name="like" value="Web Designing">Web Designing
+<input type="checkbox" name="like" value="Marketing">Marketing
+<input type="checkbox" name="like" value="Others">Others <br>
+<button onclick="display()">SAVE</button> <br><br>
+<label>OUTPUT: </label>
+<h4>Firstname: </h4> <p id="showfn"></p>
+<h4>Lastname: </h4> <p id="showln"></p>
+<h4>Middlename: </h4> <p id="showmn"></p>
+<h4>Strand: </h4> <p id="showS"></p>
+<h4>Gender: </h4> <p id="showg"></p>
+<h4>Status: </h4> <p id="showst"></p>
+<h4>Schedule: </h4> <p id="showSc"></p>
+<h4>Interested In: </h4> <p id="showlike"></p>
+<script type="text/javascript">
+	function display() {
+			var firstname = document.getElementById("fname").value;
+			document.getElementById("showfn").innerHTML = firstname
+			var lastname = document.getElementById("lname").value;
+			document.getElementById("showln").innerHTML = lastname;
+			var middlename = document.getElementById("mname").value;
+			document.getElementById("showmn").innerHTML = middlename;
+			var stoption = document.getElementById("strand").options;
+			var stindex = document.getElementById("strand").selectedIndex;
+			var Sselected = stoption[stindex].value;
+			document.getElementById("showS").innerHTML = Sselected;
+
+			var gender = document.getElementsByName("gender");
+			for (var g = 0; g < gender.length; g++){
+				if(gender[g].checked){
+					 document.getElementById("showg").innerHTML = gender[g].value;
+				}
+			}
+			var status = document.getElementsByName("status");
+			for (var s = 0; s < status.length; s++){
+				if(status[s].checked){
+					document.getElementById("showst").innerHTML = status[s].value;
+				}
+			}
+			var schedule = document.getElementsByName("schedule");
+			for (var sc = 0; sc < schedule.length; sc++){
+				if(schedule[sc].checked){
+					document.getElementById("showSc").innerHTML = schedule[sc].value;
+				}
+			}
+			var like = document.getElementsByName("like");
+			var selectedlike = "";
+			for (var l = 0; l < like.length; l++){
+				if(like[l].checked){
+					selectedlike += like[l].value + ",</br>"; 
+				}
+			}
+			document.getElementById("showlike").innerHTML = selectedlike;
+	}
+			
+</script>
+</body>
+</html>
+
